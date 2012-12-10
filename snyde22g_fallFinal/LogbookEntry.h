@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 Gabby Snyder. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface LogbookEntry : NSObject
 {
   NSDate *date;

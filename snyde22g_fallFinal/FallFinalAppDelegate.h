@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Kal.h"
+#import "FallFinalTwitterDelegate.h"
 
 @interface FallFinalAppDelegate : UIResponder <UIApplicationDelegate>
 {
   UINavigationController *navController;
   KalViewController *kal;
   id dataSource;
+  
+  // twitter object
+  FallFinalTwitterDelegate *twitterDelegate;
 }
 
 @property (strong, nonatomic) UIWindow *window;
