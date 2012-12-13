@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+#import "LogbookEntry.h"
 
 @interface FallFinalTwitterDelegate : NSObject {
   ACAccountStore *account;
   ACAccountType *accountType;
 }
 
--(int) numberOfTwitterFollowers;
+- (void) saveNumberOfTwitterFollowersIn:(NSManagedObject*)newLogbookEntry withContext:(NSManagedObjectContext*)context;
 
 @end

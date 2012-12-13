@@ -2,12 +2,13 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Day" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="twitterFollowers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="LastTimeDataRetrieved" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Day" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="Day" positionX="160" positionY="192" width="128" height="75"/>
         <element name="LastTimeDataRetrieved" positionX="-191" positionY="198" width="128" height="58"/>
     </elements>
 </model>

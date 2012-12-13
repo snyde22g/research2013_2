@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377021978.181369"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
          landmarkName = "-loadEntriesFrom:to:delegate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377021978.181369"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
          landmarkName = "-loadEntriesFrom:to:delegate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
          landmarkName = "-presentingDatesFrom:to:delegate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "137"
-         endingLineNumber = "137"
+         startingLineNumber = "94"
+         endingLineNumber = "94"
          landmarkName = "-markedDatesFrom:to:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "146"
-         endingLineNumber = "146"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
          landmarkName = "-loadItemsFromDate:toDate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "151"
-         endingLineNumber = "151"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "-removeAllItems"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
+         startingLineNumber = "95"
+         endingLineNumber = "95"
          landmarkName = "-markedDatesFrom:to:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377021978.181369"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "102"
-         endingLineNumber = "102"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
          landmarkName = "-loadEntriesFrom:to:delegate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "113"
-         endingLineNumber = "113"
+         startingLineNumber = "70"
+         endingLineNumber = "70"
          landmarkName = "-entriesFrom:to:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
+         startingLineNumber = "96"
+         endingLineNumber = "96"
          landmarkName = "-markedDatesFrom:to:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "142"
-         endingLineNumber = "142"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
          landmarkName = "-markedDatesFrom:to:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "143"
-         endingLineNumber = "143"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
          landmarkName = "-markedDatesFrom:to:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "141"
-         endingLineNumber = "141"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
          landmarkName = "-markedDatesFrom:to:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "140"
-         endingLineNumber = "140"
+         startingLineNumber = "97"
+         endingLineNumber = "97"
          landmarkName = "-markedDatesFrom:to:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,51 +203,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
+         timestampString = "377058812.905589"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
          landmarkName = "-markedDatesFrom:to:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
-         landmarkName = "-createNewLogbookEntryWithDate:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
-         landmarkName = "-createNewLogbookEntryWithDate:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "LogbookDailyDataRetriever.m"
-         timestampString = "376709818.435698"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "74"
-         endingLineNumber = "74"
-         landmarkName = "-createNewLogbookEntryWithDate:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -255,7 +216,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "snyde22g_fallFinal/FallFinalAppDelegate.m"
-         timestampString = "376775492.571151"
+         timestampString = "377034308.085514"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "40"
@@ -273,7 +234,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "13"
          endingLineNumber = "13"
-         landmarkName = "-numberOfTwitterFollowers"
+         landmarkName = "-saveNumberOfTwitterFollowersIn:withContext:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -290,29 +251,16 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "snyde22g_fallFinal/FallFinalAppDelegate.m"
-         timestampString = "376775603.054572"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "83"
-         endingLineNumber = "83"
-         landmarkName = "-createNewLogbookEntryWithDate:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "snyde22g_fallFinal/FallFinalTwitterDelegate.m"
-         timestampString = "376775752.805872"
+         timestampString = "377034845.44059"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "14"
-         endingLineNumber = "14"
-         landmarkName = "-numberOfTwitterFollowers"
+         startingLineNumber = "13"
+         endingLineNumber = "13"
+         landmarkName = "-saveNumberOfTwitterFollowersIn:withContext:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
