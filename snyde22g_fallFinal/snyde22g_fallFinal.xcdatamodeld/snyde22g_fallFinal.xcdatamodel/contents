@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Day" syncable="YES">
+    <entity name="Day" representedClassName="Day" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="twitterFollowers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="facebookFriends" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="facebookData" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FacebookData" inverseName="forDay" inverseEntity="FacebookData" syncable="YES"/>
+        <relationship name="twitterData" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TwitterData" inverseName="forDay" inverseEntity="TwitterData" syncable="YES"/>
     </entity>
-    <entity name="LastTimeDataRetrieved" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+    <entity name="FacebookData" representedClassName="FacebookData" syncable="YES">
+        <attribute name="deltaFriends" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfFriends" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="forDay" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="facebookData" inverseEntity="Day" syncable="YES"/>
+    </entity>
+    <entity name="TwitterData" representedClassName="TwitterData" syncable="YES">
+        <attribute name="deltaFollowers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfFollowers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="forDay" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="twitterData" inverseEntity="Day" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Day" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="LastTimeDataRetrieved" positionX="-191" positionY="198" width="128" height="58"/>
+        <element name="Day" positionX="160" positionY="192" width="128" height="103"/>
+        <element name="TwitterData" positionX="-47" positionY="189" width="128" height="88"/>
+        <element name="FacebookData" positionX="-47" positionY="45" width="128" height="88"/>
     </elements>
 </model>

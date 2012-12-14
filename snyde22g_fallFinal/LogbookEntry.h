@@ -12,14 +12,16 @@
 @interface LogbookEntry : NSObject
 {
   NSDate *date;
-  NSNumber *twitterFollowers;
+  NSString *identifier;
+  NSNumber *number;
 }
 
 @property (nonatomic, retain, readonly) NSDate *date;
-@property (nonatomic, retain, readonly) NSNumber *twitterFollowers;
+@property (nonatomic, retain, readonly) NSString *identifier;
+@property (nonatomic, retain, readonly) NSNumber *number;
 
-+ (LogbookEntry*)entryWithDate:(NSDate*)date;
-- (id)initWithDate:(NSDate*)aDate;
++ (LogbookEntry*)entryWithDate:(NSDate*)date withIdentifier:(NSString*)identifier andNumber:(NSNumber*)number;
+- (id)initWithDate:(NSDate*)aDate withIdentifier:(NSString*)aIdentifier andNumber:(NSNumber*)aNumber;
 
 // maybe implement something like this later?
 // - (NSComparisonResult)compare:(LogbookEntry *)otherEntry;

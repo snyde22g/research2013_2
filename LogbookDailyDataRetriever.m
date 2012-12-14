@@ -8,6 +8,9 @@
 
 #import "FallFinalAppDelegate.h"
 #import "LogbookEntry.h"
+#import "Day.h"
+#import "TwitterData.h"
+#import "FacebookData.h"
 #import "LogbookDailyDataRetriever.h"
 
 @implementation LogbookDailyDataRetriever
@@ -53,15 +56,18 @@
   if ([objects count] == 0) {
     NSLog(@"No matches");
   } else {
-    // create a new LogbookEntry object for each core data thing found.
+    // create two new LogbookEntry objects for each core data thing found - one for facebook, one
+    //  for twitter.
     // TO DO - make sure this actually returns objects within the bounds of the dates, derp.
-    for (NSManagedObject *o in objects) {
-      NSLog(@"Date: %@", [o valueForKey:@"date"]);
-      NSLog(@"Twitter Followers: %@", [o valueForKey:@"twitterFollowers"]);
-      [entries addObject:[LogbookEntry entryWithDate:[o valueForKey:@"date"]]];
+    for (Day *o in objects) {
+      // Add Facebook entry
+      FacebookData *facebook = (FacebookData *) o.facebookData;
+      [entries addObject:[LogbookEntry entryWithDate:o.date withIdentifier:@"Facebook:" andNumber:facebook.numberOfFriends]];
+      
+      // Add Twitter entry
+      TwitterData *twitter = (TwitterData *) o.twitterData;
+      [entries addObject:[LogbookEntry entryWithDate:o.date withIdentifier:@"Twitter:" andNumber:twitter.numberOfFollowers]];
     }
-    
-    NSLog(@"entries size: %u", entries.count);
   }
   
   return matches;
@@ -128,7 +134,8 @@
   }
   
   LogbookEntry *entry = [self entryAtIndexPath:indexPath];
-  cell.textLabel.text = [entry.date description];
+  cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", entry.identifier, [entry.number description]];
+
   return cell;
 }
 

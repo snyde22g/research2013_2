@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
+
+#import "Day.h"
 #import "LogbookEntry.h"
 
 @interface FallFinalTwitterDelegate : NSObject {
@@ -16,6 +18,6 @@
   ACAccountType *accountType;
 }
 
-- (void) saveNumberOfTwitterFollowersIn:(NSManagedObject*)newLogbookEntry withContext:(NSManagedObjectContext*)context;
+- (void) saveNumberOfTwitterFollowersIn:(Day *)newLogbookEntry withContext:(NSManagedObjectContext*)context withPreviousEntry:(Day *)previousEntry;
 
 @end

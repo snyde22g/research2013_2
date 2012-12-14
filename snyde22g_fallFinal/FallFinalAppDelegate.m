@@ -9,6 +9,10 @@
 #import "Kal.h"
 #import "FallFinalAppDelegate.h"
 #import "LogbookDailyDataRetriever.h"
+#import "LogbookDetailViewController.h"
+#import "Day.h"
+#import "TwitterData.h"
+#import "FacebookData.h"
 #import "FallFinalTwitterDelegate.h"
 
 @implementation FallFinalAppDelegate
@@ -19,15 +23,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  // Add new entry to the database
-  [self createNewLogbookEntryWithDate:[NSDate date]];
-  
   // Initialize Kal
   kal = [[KalViewController alloc] init];
   kal.title = @"Logbook";
+  kal.delegate = self;
   kal.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Today" style:UIBarButtonItemStyleBordered target:self action:@selector(showAndSelectToday)];
   dataSource = [[LogbookDailyDataRetriever alloc] init];
   kal.dataSource = dataSource;
+  
+  // Add new entry to the database
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self createNewLogbookEntryWithDate:[NSDate date]];
+  });
   
   // Setup the navigation stack and display it.
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -38,10 +45,8 @@
 }
 
 - (void)createNewLogbookEntryWithDate:(NSDate *)targetDate {
-  dispatch_async(dispatch_get_main_queue(), ^{
     // check to see if we already have a date for today.
-    FallFinalAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context =[appDelegate managedObjectContext];
+    NSManagedObjectContext *context =[self managedObjectContext];
   
     NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Day" inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -49,43 +54,42 @@
   
     NSError *error;
     NSArray *lastDateRetreieved = [context executeFetchRequest:request error:&error];
-//  if ([lastDateRetreieved count] > 0) {
-//    
-//    // we want to create a new entry only if it's been at least one day since the user last checked. this means...
-//    // - it could be the same day
-//    // - it could be a different day, but 24 hours haven't passed.
-//    // - it could be a different day and 24 hours have passed.
-//    // For our purposes, we only want to create a new day if one of the later two are true.
-//    
-//    // time interval since last checked.
-//    NSTimeInterval timeIntervalSinceLastEntry = [[[lastDateRetreieved lastObject] valueForKey:@"date"] timeIntervalSinceNow];
-//    
-//    if (timeIntervalSinceLastEntry <= 86400) {
-//      // we're within that 24 hour window, we should probably do some more math.
-//      // compare the date now to the date of the last entry in objects.
-//      NSDateComponents *lastRetrieved = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[[lastDateRetreieved lastObject] valueForKey:@"date"]];
-//      NSDateComponents *todaysDate = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
-//      
-//      if ( ([lastRetrieved day] == [todaysDate day]) ) {
-//        // we're still on the same day, get out of here.
-//        return;
-//      }
-//    }
-//  }
+    if ([lastDateRetreieved count] > 0) {
+    
+      // we want to create a new entry only if it's been at least one day since the user last checked. this means...
+      // - it could be the same day
+      // - it could be a different day, but 24 hours haven't passed.
+      // - it could be a different day and 24 hours have passed.
+      // For our purposes, we only want to create a new day if one of the later two are true.
+    
+      // time interval since last checked.
+      NSTimeInterval timeIntervalSinceLastEntry = [[[lastDateRetreieved lastObject] valueForKey:@"date"] timeIntervalSinceNow];
+    
+      if (timeIntervalSinceLastEntry <= 86400) {
+        // we're within that 24 hour window, we should probably do some more math.
+        // compare the date now to the date of the last entry in objects.
+        NSDateComponents *lastRetrieved = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[[lastDateRetreieved lastObject] valueForKey:@"date"]];
+        NSDateComponents *todaysDate = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
+      
+        if ( ([lastRetrieved day] == [todaysDate day]) ) {
+          // we're still on the same day, get out of here.
+          return;
+        }
+      }
+    }
   
-  // create new date entry, new thread because stuff is freezing D:
-    NSLog(@"new entry");
-    NSManagedObject *newLogbookEntry;
-    newLogbookEntry = [NSEntityDescription insertNewObjectForEntityForName:@"Day" inManagedObjectContext:context];
-    [newLogbookEntry setValue:[NSDate date] forKey:@"date"];
+  Day *newDay = [NSEntityDescription insertNewObjectForEntityForName:@"Day" inManagedObjectContext:context];
+  newDay.date = [NSDate date];
     
-    // add number of twitter followers
-    twitterDelegate = [[FallFinalTwitterDelegate alloc] init];
-    [twitterDelegate saveNumberOfTwitterFollowersIn:newLogbookEntry withContext:context];
+  // add number of twitter followers
+  twitterDelegate = [[FallFinalTwitterDelegate alloc] init];
+  [twitterDelegate saveNumberOfTwitterFollowersIn:newDay withContext:context withPreviousEntry:(Day *)[lastDateRetreieved lastObject]];
     
-    [context save:&error];
-    NSLog(@"Contact saved");
-  });
+  // add number of facebook friends
+  FallFinalFacebookDelegate *facebookDelegate = [[FallFinalFacebookDelegate alloc] init];
+  [facebookDelegate saveNumberOfFacebookFriendsIn:newDay withContext:context withPreviousEntry:(Day *)[lastDateRetreieved lastObject]];
+    
+  [context save:&error];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -128,6 +132,63 @@
             abort();
         } 
     }
+}
+
+// Action handler for the navigation bar's right bar button item.
+- (void)showAndSelectToday
+{
+  [kal showAndSelectDate:[NSDate date]];
+}
+
+#pragma mark UITableViewDelegate protocol conformance
+
+// Display a details screen for the selected holiday/row.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  NSLog(@"Hello, dumbass.");
+  //  Holiday *holiday = [dataSource holidayAtIndexPath:indexPath];
+//  HolidaysDetailViewController *vc = [[[HolidaysDetailViewController alloc] initWithHoliday:holiday] autorelease];
+//  [navController pushViewController:vc animated:YES];
+}
+
+#pragma mark - Facebook related things
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState ) state error:(NSError *)error
+{
+  switch (state) {
+    case FBSessionStateOpen: {
+      // we don't have a log in view right now. Eventually, we should fix this.
+//      UIViewController *topViewController = [self.navController topViewController];
+//      if ([[topViewController modalViewController] isKindOfClass:[SCLoginViewController class]]) {
+//        [topViewController dismissModalViewControllerAnimated:YES];
+//      }
+    }
+      break;
+    case FBSessionStateClosed:
+    case FBSessionStateClosedLoginFailed:
+      // Once the user has logged in, we want them to
+      // be looking at the root view.
+      //[self.navController popToRootViewControllerAnimated:NO];
+      
+      [FBSession.activeSession closeAndClearTokenInformation];
+      
+      //[self showLoginView];
+      break;
+    default:
+      break;
+  }
+  
+  if (error) {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK"otherButtonTitles:nil];
+    [alertView show];
+  }
+}
+
+- (void)openSession
+{
+  [FBSession openActiveSessionWithReadPermissions:nil allowLoginUI:YES completionHandler:^(FBSession *session,
+    FBSessionState state, NSError *error) {
+     [self sessionStateChanged:session state:state error:error];
+   }];
 }
 
 #pragma mark - Core Data stack

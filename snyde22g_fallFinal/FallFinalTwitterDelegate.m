@@ -6,11 +6,12 @@
 //  Copyright (c) 2012 Gabby Snyder. All rights reserved.
 //
 
+#import "TwitterData.h"
 #import "FallFinalTwitterDelegate.h"
 
 @implementation FallFinalTwitterDelegate
 
-- (void) saveNumberOfTwitterFollowersIn:(NSManagedObject*)newLogbookEntry withContext:(NSManagedObjectContext*)context {
+- (void) saveNumberOfTwitterFollowersIn:(Day *)newLogbookEntry withContext:(NSManagedObjectContext*)context withPreviousEntry:(Day *)previousEntry {
   account = [[ACAccountStore alloc] init];
   accountType = [account accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
   [account requestAccessToAccountsWithType:accountType options:nil completion:^(BOOL granted, NSError *error) {
@@ -30,10 +31,16 @@
          
         getRequest.account = twitterAccount;
         [getRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+          // create the new twitter object
+          TwitterData *twitter = (TwitterData *)[NSEntityDescription insertNewObjectForEntityForName:@"TwitterData" inManagedObjectContext:context];
+          
           // only log the number of followers
           NSArray *jsonData = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
-          NSLog(@"follower count: %@", [jsonData valueForKey:@"followers_count"]);
-          [newLogbookEntry setValue:[NSNumber numberWithInt:[[jsonData valueForKey:@"followers_count"] intValue]] forKey:@"twitterFollowers"];
+          twitter.numberOfFollowers = [NSNumber numberWithInt:[[jsonData valueForKey:@"followers_count"] intValue]];
+          twitter.forDay = newLogbookEntry;
+          newLogbookEntry.twitterData = twitter;
+          
+          // calculate delta
           
           [context save:&error];
         }];

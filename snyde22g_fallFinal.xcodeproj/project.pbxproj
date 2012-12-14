@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6382BDA8167B95BF007A7674 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 6382BDA7167B95BF007A7674 /* Day.m */; };
+		6382BDAB167B95C0007A7674 /* FacebookData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6382BDAA167B95C0007A7674 /* FacebookData.m */; };
+		6382BDAE167B95C1007A7674 /* TwitterData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6382BDAD167B95C1007A7674 /* TwitterData.m */; };
 		6384AA5116741A3800111809 /* snyde22g_fallFinal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6384AA4F16741A3700111809 /* snyde22g_fallFinal.xcdatamodeld */; };
 		6384AA58167423A000111809 /* FallFinalTwitterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6384AA57167423A000111809 /* FallFinalTwitterDelegate.m */; };
 		6384AA5A1674274C00111809 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6384AA591674274C00111809 /* Accounts.framework */; };
@@ -31,6 +34,11 @@
 		63922737166CDE05006AC4E6 /* Kal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63922736166CDE05006AC4E6 /* Kal.bundle */; };
 		63922746166CE1DF006AC4E6 /* LogbookDailyDataRetriever.m in Sources */ = {isa = PBXBuildFile; fileRef = 63922745166CE1DF006AC4E6 /* LogbookDailyDataRetriever.m */; };
 		63922749166CEDD6006AC4E6 /* LogbookEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 63922748166CEDD6006AC4E6 /* LogbookEntry.m */; };
+		63A975C416797BAD00016F77 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A975C316797BAD00016F77 /* FacebookSDK.framework */; };
+		63A975C616797BC400016F77 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 63A975C516797BC400016F77 /* FacebookSDKResources.bundle */; };
+		63A975C816797BF100016F77 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A975C716797BF100016F77 /* AdSupport.framework */; };
+		63A975CE167988F300016F77 /* FallFinalFacebookDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A975CD167988F300016F77 /* FallFinalFacebookDelegate.m */; };
+		63A975DA167A8A8C00016F77 /* LogbookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A975D9167A8A8B00016F77 /* LogbookDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +66,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6382BDA6167B95BF007A7674 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
+		6382BDA7167B95BF007A7674 /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Day.m; sourceTree = "<group>"; };
+		6382BDA9167B95C0007A7674 /* FacebookData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookData.h; sourceTree = "<group>"; };
+		6382BDAA167B95C0007A7674 /* FacebookData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookData.m; sourceTree = "<group>"; };
+		6382BDAC167B95C1007A7674 /* TwitterData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterData.h; sourceTree = "<group>"; };
+		6382BDAD167B95C1007A7674 /* TwitterData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterData.m; sourceTree = "<group>"; };
 		6384AA5016741A3700111809 /* snyde22g_fallFinal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = snyde22g_fallFinal.xcdatamodel; sourceTree = "<group>"; };
 		6384AA56167423A000111809 /* FallFinalTwitterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallFinalTwitterDelegate.h; sourceTree = "<group>"; };
 		6384AA57167423A000111809 /* FallFinalTwitterDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallFinalTwitterDelegate.m; sourceTree = "<group>"; };
@@ -89,6 +103,13 @@
 		63922745166CE1DF006AC4E6 /* LogbookDailyDataRetriever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogbookDailyDataRetriever.m; path = ../LogbookDailyDataRetriever.m; sourceTree = "<group>"; };
 		63922747166CEDD6006AC4E6 /* LogbookEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogbookEntry.h; sourceTree = "<group>"; };
 		63922748166CEDD6006AC4E6 /* LogbookEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogbookEntry.m; sourceTree = "<group>"; };
+		63A975C316797BAD00016F77 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		63A975C516797BC400016F77 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../../../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		63A975C716797BF100016F77 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		63A975CC167988F300016F77 /* FallFinalFacebookDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FallFinalFacebookDelegate.h; sourceTree = "<group>"; };
+		63A975CD167988F300016F77 /* FallFinalFacebookDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FallFinalFacebookDelegate.m; sourceTree = "<group>"; };
+		63A975D8167A8A8B00016F77 /* LogbookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogbookDetailViewController.h; sourceTree = "<group>"; };
+		63A975D9167A8A8B00016F77 /* LogbookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogbookDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A975C816797BF100016F77 /* AdSupport.framework in Frameworks */,
 				6384AA5E1674276E00111809 /* Social.framework in Frameworks */,
 				6384AA5A1674274C00111809 /* Accounts.framework in Frameworks */,
 				63922735166CDDF3006AC4E6 /* libKal.a in Frameworks */,
@@ -103,6 +125,7 @@
 				639226F2166CDD31006AC4E6 /* Foundation.framework in Frameworks */,
 				639226F4166CDD31006AC4E6 /* CoreGraphics.framework in Frameworks */,
 				639226F6166CDD31006AC4E6 /* CoreData.framework in Frameworks */,
+				63A975C416797BAD00016F77 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +166,8 @@
 		639226EE166CDD31006AC4E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63A975C716797BF100016F77 /* AdSupport.framework */,
+				63A975C316797BAD00016F77 /* FacebookSDK.framework */,
 				6384AA5D1674276E00111809 /* Social.framework */,
 				6384AA591674274C00111809 /* Accounts.framework */,
 				639226EF166CDD31006AC4E6 /* UIKit.framework */,
@@ -157,15 +182,19 @@
 		639226F7166CDD31006AC4E6 /* snyde22g_fallFinal */ = {
 			isa = PBXGroup;
 			children = (
+				63922700166CDD32006AC4E6 /* FallFinalAppDelegate.h */,
+				63922701166CDD32006AC4E6 /* FallFinalAppDelegate.m */,
 				63922744166CE1DF006AC4E6 /* LogbookDailyDataRetriever.h */,
 				63922745166CE1DF006AC4E6 /* LogbookDailyDataRetriever.m */,
 				63922747166CEDD6006AC4E6 /* LogbookEntry.h */,
 				63922748166CEDD6006AC4E6 /* LogbookEntry.m */,
-				63922700166CDD32006AC4E6 /* FallFinalAppDelegate.h */,
-				6384AA4F16741A3700111809 /* snyde22g_fallFinal.xcdatamodeld */,
-				63922701166CDD32006AC4E6 /* FallFinalAppDelegate.m */,
+				63A975D8167A8A8B00016F77 /* LogbookDetailViewController.h */,
+				63A975D9167A8A8B00016F77 /* LogbookDetailViewController.m */,
+				63A975CC167988F300016F77 /* FallFinalFacebookDelegate.h */,
+				63A975CD167988F300016F77 /* FallFinalFacebookDelegate.m */,
 				6384AA56167423A000111809 /* FallFinalTwitterDelegate.h */,
 				6384AA57167423A000111809 /* FallFinalTwitterDelegate.m */,
+				6384AA4F16741A3700111809 /* snyde22g_fallFinal.xcdatamodeld */,
 				639226F8166CDD31006AC4E6 /* Supporting Files */,
 			);
 			path = snyde22g_fallFinal;
@@ -174,6 +203,7 @@
 		639226F8166CDD31006AC4E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63A975C516797BC400016F77 /* FacebookSDKResources.bundle */,
 				63922736166CDE05006AC4E6 /* Kal.bundle */,
 				639226F9166CDD31006AC4E6 /* snyde22g_fallFinal-Info.plist */,
 				639226FA166CDD31006AC4E6 /* InfoPlist.strings */,
@@ -182,6 +212,12 @@
 				63922703166CDD32006AC4E6 /* Default.png */,
 				63922705166CDD32006AC4E6 /* Default@2x.png */,
 				63922707166CDD32006AC4E6 /* Default-568h@2x.png */,
+				6382BDAC167B95C1007A7674 /* TwitterData.h */,
+				6382BDAD167B95C1007A7674 /* TwitterData.m */,
+				6382BDA9167B95C0007A7674 /* FacebookData.h */,
+				6382BDAA167B95C0007A7674 /* FacebookData.m */,
+				6382BDA6167B95BF007A7674 /* Day.h */,
+				6382BDA7167B95BF007A7674 /* Day.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -307,6 +343,7 @@
 				63922704166CDD32006AC4E6 /* Default.png in Resources */,
 				63922706166CDD32006AC4E6 /* Default@2x.png in Resources */,
 				63922708166CDD32006AC4E6 /* Default-568h@2x.png in Resources */,
+				63A975C616797BC400016F77 /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +384,11 @@
 				63922749166CEDD6006AC4E6 /* LogbookEntry.m in Sources */,
 				6384AA5116741A3800111809 /* snyde22g_fallFinal.xcdatamodeld in Sources */,
 				6384AA58167423A000111809 /* FallFinalTwitterDelegate.m in Sources */,
+				63A975CE167988F300016F77 /* FallFinalFacebookDelegate.m in Sources */,
+				63A975DA167A8A8C00016F77 /* LogbookDetailViewController.m in Sources */,
+				6382BDA8167B95BF007A7674 /* Day.m in Sources */,
+				6382BDAB167B95C0007A7674 /* FacebookData.m in Sources */,
+				6382BDAE167B95C1007A7674 /* TwitterData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +489,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "snyde22g_fallFinal/snyde22g_fallFinal-Prefix.pch";
 				HEADER_SEARCH_PATHS = Kal/src/;
@@ -455,6 +501,7 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-Objc",
+					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -465,6 +512,10 @@
 		63922726166CDD32006AC4E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "snyde22g_fallFinal/snyde22g_fallFinal-Prefix.pch";
 				HEADER_SEARCH_PATHS = Kal/src/;
@@ -473,6 +524,7 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-Objc",
+					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

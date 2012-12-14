@@ -12,12 +12,12 @@
 @interface LogbookDailyDataRetriever : NSObject <KalDataSource>
 {
   NSMutableArray *items;
-  
-  // This array is populated with the entries in our logbook.
   NSMutableArray *entries;
 }
 
 + (LogbookDailyDataRetriever *)dataSource;
+
+- (LogbookEntry *)entryAtIndexPath:(NSIndexPath *)indexPath;
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;

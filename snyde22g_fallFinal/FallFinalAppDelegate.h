@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import "FallFinalFacebookDelegate.h"
 #import "Kal.h"
 #import "FallFinalTwitterDelegate.h"
 
-@interface FallFinalAppDelegate : UIResponder <UIApplicationDelegate>
+@interface FallFinalAppDelegate : UIResponder <UIApplicationDelegate, UITableViewDelegate>
 {
   UINavigationController *navController;
   KalViewController *kal;
@@ -21,6 +23,9 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
+
+// for facebook
+- (void) openSession;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
